@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Example from "./Components/Example";
 
 function App() {
+  const urls = [
+    "http://localhost:7070/data",
+    "http://localhost:7070/error",
+    "http://localhost:7070/loading",
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {urls.map((i) => (
+        <Example key={i} url={i} />
+      ))}
     </div>
   );
 }
